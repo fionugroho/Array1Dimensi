@@ -1,0 +1,48 @@
+package pertemuan8;
+
+import javax.swing.JOptionPane;
+public class tugas2
+{
+	public static void main(String[]args)
+	{
+		int i=0;
+		int j=0;
+		int k=0;
+		int min=0; 
+		int max=0;
+        double r=0;
+	int[]data=new int[10];
+	int n=data.length;
+	
+	for (i=0; i<n; i++)
+	{
+		data[i]=Integer.parseInt(JOptionPane.showInputDialog("Masukan Element Index ke : "+i));
+		System.out.println("Index Ke "+i+" Adalah "+data[i]);
+		j += data[i];
+	}
+     r=j/n;
+     System.out.println("Nilai Rata-Rata  : "+r);
+     min=data[1];
+     for (i=0;i<n;i++)
+     {
+     if (data[i]<=min) min=data[i];
+     }
+     System.out.println("Nilai Terkecil   : "+min);
+     max=data[1];
+     for (i=1;i<n;i++)
+     {
+     if (data[i]>max) max=data[i];
+     }
+     System.out.println("Nilai Terbesar   : "+max);
+   
+     for (i=0; i<n; i++)
+         for (j=0; j<n; j++)
+             if (data[j+1] < data [j])
+             {
+                 k=data[j];
+                 data[j] = data[j+1];
+                 data[j+1]=k;
+             }
+	}
+}
+
