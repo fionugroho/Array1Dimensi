@@ -1,0 +1,33 @@
+package pertemuan8;
+
+import javax.swing.JOptionPane;
+
+
+public class tugas3 {
+	public static void main(String[]args){
+		String input = JOptionPane.showInputDialog("Masukkan jumlah array");
+		int i, total=0, rata2=0, max=0, min=0;
+		
+		int jumData = Integer.parseInt(input);
+		int [] arrData = new int[jumData];
+		int terbesar=arrData[0];
+		int terkecil=arrData[0];
+		
+		for(i=0;i<jumData;i++){ //memasukkan data sebanyak jumData
+			arrData[i]=Integer.parseInt(JOptionPane.showInputDialog("Masukkan indeks ke"+(i)));
+			if (arrData[i]>terbesar){
+				terbesar=arrData[i]; max=i;
+			}else if(arrData[i]<terkecil){
+				terkecil=arrData[i];min=i;
+			}
+			total+=arrData[i];
+		}
+		rata2=total/jumData;
+		JOptionPane.showMessageDialog(null, "Nilai terbesar="+terbesar+",Indeks ke["+max+"]");
+		JOptionPane.showMessageDialog(null, "Nilai terkecil="+terkecil+",Indeks ke["+min+"]");
+		JOptionPane.showMessageDialog(null, "Nilai total="+total);
+		JOptionPane.showMessageDialog(null, "Nilai rata-rata="+rata2);
+			}
+		
+	}
+
